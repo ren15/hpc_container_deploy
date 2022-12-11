@@ -16,4 +16,8 @@ jobs:
     - name: compile singularity
       run: |
         sudo bash 1_build.sh
+
+    - name: run singularity
+      run: |
+        singularity run docker://gcc:12.1 gcc --version
       
