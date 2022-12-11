@@ -32,7 +32,7 @@ jobs:
 
     - name: build, package
       run: |
-        whoami
+        id
         bash build.sh
         ls -lah
     
