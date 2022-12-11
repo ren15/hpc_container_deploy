@@ -1,6 +1,7 @@
 sing_deploy*
 squashfs-tools
 sin_root
+*.deb
 
 
 
