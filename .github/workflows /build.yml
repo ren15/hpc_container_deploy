@@ -1,0 +1,16 @@
+name: ci
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    container:
+      image: ubuntu:20.04
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: prepare system
+      run: |
+        sudo bash 0_setup.sh
