@@ -12,3 +12,8 @@ jobs:
     - name: prepare system
       run: |
         sudo bash 0_setup.sh
+
+    - name: compile singularity
+      run: |
+        sudo bash 1_build.sh
+      
