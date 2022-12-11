@@ -39,6 +39,7 @@ jobs:
     - name: test run
       run: |
         tar xvf sing_deploy.tar.gz
+        ls -lah
         export PATH=$PWD/sing_deploy/bin:${PATH}
         singularity config global --set "mksquashfs path" $PWD/sing_deploy/bin/
         singularity run docker://alpine cat /etc/os-release
