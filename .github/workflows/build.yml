@@ -19,5 +19,28 @@ jobs:
 
     - name: run singularity
       run: |
-        singularity run docker://gcc:12.1 gcc --version
-      
+        singularity run docker://alpine cat /etc/os-release
+  
+  build_tar:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: prepare system
+      run: |
+        sudo bash 0_setup.sh
+
+    - name: build, package
+      run: |
+        bash build.sh
+        ls -lah
+    
+    - name: test run
+      run: |
+        tar xvf sing_deploy.tar.gz
+        export PATH=$PWD/sing_deploy/bin:${PATH}
+        singularity config global --set "mksquashfs path" $PWD/sing_deploy/bin/
+        singularity run docker://alpine cat /etc/os-release
+
+        
+

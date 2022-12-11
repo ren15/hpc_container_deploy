@@ -24,3 +24,4 @@ dpkg -x squashfs-tools_4.4-1_amd64.deb squashfs-tools
 mv squashfs-tools/usr/bin/* sing_deploy/bin/
 
 tar cvzf sing_deploy.tar.gz sing_deploy/
+rm -rf sing_deploy
