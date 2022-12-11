@@ -12,7 +12,7 @@ apt-get update && apt-get install -y \
     git \
     cryptsetup
 
-export GOVERSION=1.17.3 OS=linux ARCH=amd64  # change this as you need
+export GOVERSION=1.19.4 OS=linux ARCH=amd64  # change this as you need
 
 wget -q -O /tmp/go${GOVERSION}.${OS}-${ARCH}.tar.gz \
     https://dl.google.com/go/go${GOVERSION}.${OS}-${ARCH}.tar.gz
